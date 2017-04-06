@@ -6,7 +6,7 @@
 #include <iomanip>						//本程序的setw在此头文件中定义
 #include<fstream>						//本程序的ofstream和ifstream在此头文件中定义
 using namespace std;
-#define WorkerNum 1							//WorkerNum代表职工人数
+#define WorkerNum 3							//WorkerNum代表职工人数
 //定义了职工的工资数据对应的结构体
 struct worker {
 	char name[8];        		//职工姓名
