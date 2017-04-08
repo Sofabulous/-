@@ -18,7 +18,7 @@ struct worker {
 	int sum;					//实发工资
 };
 void WriteData();			//这3行是函数声明
-void AveScore(worker w[]);
+void Sum(worker w[]);
 void OutData(worker  w[]);
 void main() {
 	worker w[WorkerNum];					//定义保存职工的工资数据的数组
@@ -40,7 +40,7 @@ void WriteData() {//从键盘读入各职工的工资数据，写入磁盘文件中Salary.dat
 	}
 	outData.close();
 }
-void AveScore(worker w[]) {//计算实发工资
+void Sum(worker w[]) {//计算实发工资
 	for (int i = 0; i<WorkerNum; i++) {
 		w[i].sum=w[i].bs + w[i].os + w[i].bonus - w[i].lose;
 	}
@@ -54,7 +54,7 @@ void OutData(worker w[]) {//从文件中读出每位职工的工资数据并记录在worker数组w
 		infile >> w[i].Id>> w[i].name >> w[i].bs >> w[i].os >> w[i].bonus >> w[i].lose;
 		i++;
 	}
-	AveScore(w);//计算实发工资
+	Sum(w);//计算实发工资
 	cout <<"职工编号" << setw(18) << "姓名" << setw(18) << "基本工资"
 		<< setw(18) << "加班工资" << setw(18) << "奖金" << setw(18) << "扣除" << setw(18) << "实发工资" <<endl;
 
